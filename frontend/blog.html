@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدونة التجارب - بذرة</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/2917/2917995.png">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-seedling"></i>
+                    <span>بذرة</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="guide.html"><i class="fas fa-book"></i> دليل النباتات</a></li>
+                    <li><a href="marketplace.html"><i class="fas fa-store"></i> السوق المجتمعي</a></li>
+                    <li><a href="blog.html" class="active"><i class="fas fa-blog"></i> مدونة التجارب</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="btn-primary" onclick="togglePostForm()">
+                        <i class="fas fa-plus"></i> شارك تجربتك
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- قسم الهيرو -->
+    <section class="blog-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1><i class="fas fa-blog"></i> مدونة التجارب الزراعية</h1>
+                <p class="subtitle">منصة لتبادل الخبرات والنصائح بين المزارعين المنزليين</p>
+                <p class="description">
+                    شارك قصص نجاحك، استفد من تجارب الآخرين، وابنِ معنا مجتمعاً زراعياً متكاملاً يدعم رؤية 2030
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <h3>+200</h3>
+                            <p>مشارك</p>
+                        </div>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-file-alt"></i>
+                        <div>
+                            <h3>+150</h3>
+                            <p>تجربة</p>
+                        </div>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-heart"></i>
+                        <div>
+                            <h3>+500</h3>
+                            <p>إعجاب</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400&h=300&fit=crop" alt="مجتمع الزراعة">
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- نموذج إضافة تجربة -->
+        <section id="addPostSection" class="add-post-section" style="display: none;">
+            <div class="section-header">
+                <h2><i class="fas fa-pen-fancy"></i> شارك تجربتك مع المجتمع</h2>
+                <button class="btn-outline close-btn" onclick="togglePostForm()">
+                    <i class="fas fa-times"></i> إغلاق
+                </button>
+            </div>
+            
+            <form id="postForm" class="post-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="postTitle"><i class="fas fa-heading"></i> عنوان التجربة *</label>
+                        <input type="text" id="postTitle" name="title" required 
+                               placeholder="مثال: تجربتي الناجحة في زراعة الطماطم العضوية">
+                        <small class="hint">اكتب عنواناً جذاباً يعبر عن تجربتك</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="postAuthor"><i class="fas fa-user"></i> اسمك *</label>
+                        <input type="text" id="postAuthor" name="author" required 
+                               placeholder="يمكن استخدام اسم مستعار">
+                        <small class="hint">سيظهر هذا الاسم مع تجربتك</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="plantType"><i class="fas fa-leaf"></i> نوع النبات</label>
+                        <select id="plantType" name="plantType">
+                            <option value="">اختر نبات</option>
+                            <option value="طماطم">🍅 طماطم</option>
+                            <option value="خيار">🥒 خيار</option>
+                            <option value="فلفل">🌶️ فلفل</option>
+                            <option value="نعناع">🌿 نعناع</option>
+                            <option value="ريحان">🌱 ريحان</option>
+                            <option value="خس">🥬 خس</option>
+                            <option value="فراولة">🍓 فراولة</option>
+                            <option value="أخرى">🌻 أخرى</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="experienceType"><i class="fas fa-chart-line"></i> نوع التجربة *</label>
+                        <select id="experienceType" name="experienceType" required>
+                            <option value="">اختر النوع</option>
+                            <option value="success">🎉 قصة نجاح</option>
+                            <option value="tip">💡 نصيحة مفيدة</option>
+                            <option value="failure">📚 درس مستفاد</option>
+                            <option value="question">❓ سؤال للمجتمع</option>
+                            <option value="review">⭐ مراجعة أداة</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="postContent"><i class="fas fa-align-left"></i> تفاصيل التجربة *</label>
+                    <textarea id="postContent" name="content" rows="6" required 
+                              placeholder="اكتب تفاصيل تجربتك هنا... 
+مثال: 
+• ماذا زرعت ومتى؟
+• ما التحديات التي واجهتك؟
+• كيف تغلبت على المشاكل؟
+• ما النتائج التي حصلت عليها؟
+• ما النصائح التي تقدمها للآخرين؟
+
+كلما كانت التفاصيل أوضح، كانت الفائدة أكبر للمجتمع"></textarea>
+                    <small class="hint">يمكنك استخدام النقاط لتنسيق المحتوى</small>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="postImage"><i class="fas fa-image"></i> رابط صورة (اختياري)</label>
+                    <div class="image-input-container">
+                        <input type="url" id="postImage" name="imageUrl" 
+                               placeholder="https://example.com/your-garden.jpg">
+                        <button type="button" class="btn-small" onclick="previewImage()">
+                            <i class="fas fa-eye"></i> معاينة
+                        </button>
+                    </div>
+                    <div id="imagePreview" class="image-preview"></div>
+                    <small class="hint">الصور تزيد من مصداقية وجاذبية التجربة</small>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary btn-large">
+                        <i class="fas fa-paper-plane"></i> نشر التجربة
+                    </button>
+                    <button type="reset" class="btn-outline">
+                        <i class="fas fa-redo"></i> مسح النموذج
+                    </button>
+                </div>
+                
+                <div id="postMessage" class="message"></div>
+            </form>
+        </section>
+
+        <!-- فلاتر المدونة -->
+        <section class="blog-filters">
+            <div class="filter-group">
+                <label for="postCategory"><i class="fas fa-filter"></i> التصنيف:</label>
+                <select id="postCategory" onchange="filterPosts()">
+                    <option value="">جميع التجارب</option>
+                    <option value="success">قصص النجاح</option>
+                    <option value="tip">نصائح مفيدة</option>
+                    <option value="failure">دروس مستفادة</option>
+                    <option value="question">أسئلة المجتمع</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="plantFilter"><i class="fas fa-leaf"></i> النبات:</label>
+                <select id="plantFilter" onchange="filterPosts()">
+                    <option value="">جميع النباتات</option>
+                    <option value="طماطم">طماطم</option>
+                    <option value="خيار">خيار</option>
+                    <option value="فلفل">فلفل</option>
+                    <option value="نعناع">نعناع</option>
+                </select>
+            </div>
+            
+            <div class="filter-group search-group">
+                <label for="postSearch"><i class="fas fa-search"></i> بحث:</label>
+                <div class="search-container">
+                    <input type="text" id="postSearch" placeholder="ابحث في التجارب..." 
+                           oninput="filterPosts()">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            
+            <div class="filter-group">
+                <label for="sortPosts"><i class="fas fa-sort"></i> الترتيب:</label>
+                <select id="sortPosts" onchange="sortPosts()">
+                    <option value="newest">الأحدث أولاً</option>
+                    <option value="oldest">الأقدم أولاً</option>
+                    <option value="popular">الأكثر تفاعلاً</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- قائمة التجارب -->
+        <section class="blog-posts-section">
+            <div class="section-header">
+                <h2><i class="fas fa-comments"></i> تجارب المجتمع</h2>
+                <p class="section-subtitle">تعلم من تجارب الآخرين وشارك معرفتك</p>
+            </div>
+            
+            <div class="posts-stats">
+                <span id="postsCount">0</span> تجربة متاحة
+                <button class="btn-small" onclick="togglePostForm()">
+                    <i class="fas fa-plus"></i> أضف تجربتك
+                </button>
+            </div>
+            
+            <div class="posts-container" id="postsContainer">
+                <!-- ستم ملؤها عبر JavaScript -->
+                <div class="loading-posts">
+                    <div class="spinner">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </div>
+                    <p>جاري تحميل التجارب...</p>
+                </div>
+            </div>
+            
+            <div id="noPosts" class="no-posts" style="display: none;">
+                <div class="empty-state">
+                    <i class="fas fa-seedling"></i>
+                    <h3>لا توجد تجارب بعد</h3>
+                    <p>كن أول من يشارك تجربته مع المجتمع الزراعي</p>
+                    <button class="btn-primary" onclick="togglePostForm()">
+                        <i class="fas fa-plus"></i> ابدأ بمشاركة تجربتك
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- إرشادات المشاركة -->
+        <section class="guidelines">
+            <div class="guidelines-container">
+                <h3><i class="fas fa-lightbulb"></i> إرشادات المشاركة</h3>
+                <div class="guidelines-grid">
+                    <div class="guideline-card positive">
+                        <i class="fas fa-check-circle"></i>
+                        <h4>افعل</h4>
+                        <ul>
+                            <li>شارك تجاربك الحقيقية</li>
+                            <li>قدم نصائح عملية</li>
+                            <li>أرفق صوراً إن أمكن</li>
+                            <li>احترم آراء الآخرين</li>
+                        </ul>
+                    </div>
+                    <div class="guideline-card negative">
+                        <i class="fas fa-times-circle"></i>
+                        <h4>لا تفعل</h4>
+                        <ul>
+                            <li>لا تشارك معلومات شخصية</li>
+                            <li>لا تنشر محتوى مسيء</li>
+                            <li>لا تنسخ تجارب الآخرين</li>
+                            <li>لا تقدم معلومات خاطئة</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-seedling"></i>
+                        <span>بذرة</span>
+                    </div>
+                    <p>منصة لتبادل المعرفة والخبرات في الزراعة المنزلية</p>
+                    <p>ندعم رؤية 2030 في تحقيق الأمن الغذائي</p>
+                </div>
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="guide.html">دليل النباتات</a></li>
+                        <li><a href="marketplace.html">السوق المجتمعي</a></li>
+                        <li><a href="blog.html">مدونة التجارب</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>تواصل معنا</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> blog@seed-platform.com</li>
+                        <li><i class="fas fa-phone"></i> 9200 12345</li>
+                        <li><i class="fas fa-map-marker-alt"></i> الرياض، السعودية</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>تابعنا</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon tiktok"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 مدونة بذرة | جميع الحقوق محفوظة</p>
+                <p>مشروع تعليمي - جامعة أم القرى | CS3810T</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- نافذة عرض التدوينة الكاملة -->
+    <div id="postModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+            <div class="modal-footer">
+                <button class="btn-primary" onclick="closeModal()">إغلاق</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/blog.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل النباتات - بذرة</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/guide.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-seedling"></i>
+                    <span>بذرة</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="guide.html" class="active"><i class="fas fa-book"></i> دليل النباتات</a></li>
+                    <li><a href="marketplace.html"><i class="fas fa-store"></i> السوق المجتمعي</a></li>
+                    <li><a href="blog.html"><i class="fas fa-blog"></i> مدونة التجارب</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- دليل النباتات -->
+        <section class="guide-section">
+            <div class="section-header">
+                <h1><i class="fas fa-book-open"></i> دليل النباتات المناسبة للمناخ السعودي</h1>
+                <p class="section-subtitle">دليل شامل للنباتات التي تزدهر في المناخ السعودي مع إرشادات الزراعة والعناية</p>
+            </div>
+
+            <!-- فلاتر البحث -->
+            <div class="guide-filters">
+                <div class="search-box">
+                    <input type="text" id="plantSearch" placeholder="ابحث عن نبات...">
+                    <button onclick="searchPlants()"><i class="fas fa-search"></i></button>
+                </div>
+                
+                <div class="filter-tags">
+                    <button class="tag active" data-type="all">الكل</button>
+                    <button class="tag" data-type="vegetables">خضروات</button>
+                    <button class="tag" data-type="fruits">فواكه</button>
+                    <button class="tag" data-type="herbs">أعشاب</button>
+                    <button class="tag" data-type="flowers">زهور</button>
+                    <button class="tag" data-type="easy">سهلة الزراعة</button>
+                </div>
+            </div>
+
+            <!-- قائمة النباتات -->
+            <div class="plants-grid" id="plantsGrid">
+                <!-- سيتم ملؤها عبر JavaScript -->
+            </div>
+
+            <!-- معلومات الزراعة -->
+            <div class="gardening-tips">
+                <h2><i class="fas fa-lightbulb"></i> نصائح عامة للزراعة في السعودية</h2>
+                
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <i class="fas fa-tint"></i>
+                        <h3>الري</h3>
+                        <p>السقي في الصباح الباكر أو المساء لتقليل التبخر. استخدم أنظمة الري بالتنقيط لترشيد المياه.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <i class="fas fa-sun"></i>
+                        <h3>الظل</h3>
+                        <p>وفر ظلاً جزئياً للنباتات الحساسة خلال ساعات الذروة (12-3 ظهراً).</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <i class="fas fa-leaf"></i>
+                        <h3>التسميد</h3>
+                        <p>استخدم الأسمدة العضوية مثل السماد الطبيعي كل 3-4 أسابيع خلال موسم النمو.</p>
+                    </div>
+                    
+                    <div class="tip-card">
+                        <i class="fas fa-bug"></i>
+                        <h3>المكافحة</h3>
+                        <p>استخدم مبيدات حشرية طبيعية مثل بخاخ الثوم للقضاء على الآفات.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- جدول مواسم الزراعة -->
+            <div class="seasons-table">
+                <h2><i class="fas fa-calendar-alt"></i> مواسم الزراعة المناسبة</h2>
+                
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>الموسم</th>
+                                <th>الشهور</th>
+                                <th>أمثلة على النباتات</th>
+                                <th>درجة الحرارة المثالية</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>الشتاء</td>
+                                <td>نوفمبر - فبراير</td>
+                                <td>خس، سبانخ، جزر، فجل</td>
+                                <td>15-25°م</td>
+                            </tr>
+                            <tr>
+                                <td>الربيع</td>
+                                <td>مارس - مايو</td>
+                                <td>طماطم، خيار، فلفل، باذنجان</td>
+                                <td>20-30°م</td>
+                            </tr>
+                            <tr>
+                                <td>الصيف</td>
+                                <td>يونيو - أغسطس</td>
+                                <td>بامية، كوسا، بطيخ، شمام</td>
+                                <td>25-35°م</td>
+                            </tr>
+                            <tr>
+                                <td>الخريف</td>
+                                <td>سبتمبر - أكتوبر</td>
+                                <td>فجل، جزر، بصل، ثوم</td>
+                                <td>20-30°م</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-seedling"></i>
+                        <span>بذرة</span>
+                    </div>
+                    <p>دليل زراعي مجاني لدعم المزارعين المنزليين في السعودية</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 دليل بذرة الزراعي | معلومات من مصادر موثوقة</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/guide.js"></script>
+</body>
+</html>

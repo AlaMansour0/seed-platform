@@ -1,0 +1,300 @@
+/* تنسيقات خاصة بصفحة الدليل */
+
+.guide-section {
+    padding: 40px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h1 {
+    color: var(--primary-dark);
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    color: var(--gray);
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* فلاتر البحث */
+.guide-filters {
+    background: white;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 40px;
+}
+
+.search-box {
+    display: flex;
+    margin-bottom: 20px;
+    max-width: 500px;
+    margin: 0 auto 25px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid var(--primary-light);
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    font-size: 16px;
+    outline: none;
+}
+
+.search-box button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0 25px;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    cursor: pointer;
+    font-size: 18px;
+    transition: var(--transition);
+}
+
+.search-box button:hover {
+    background: var(--primary-dark);
+}
+
+.filter-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    padding: 10px 20px;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.tag:hover {
+    background: var(--primary-light);
+    color: white;
+}
+
+.tag.active {
+    background: var(--primary);
+    color: white;
+}
+
+/* شبكة النباتات */
+.plants-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.plant-card {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.plant-card:hover {
+    transform: translateY(-10px);
+}
+
+.plant-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.plant-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.plant-card:hover .plant-image img {
+    transform: scale(1.1);
+}
+
+.plant-content {
+    padding: 20px;
+}
+
+.plant-category {
+    display: inline-block;
+    background: #e8f5e9;
+    color: var(--primary);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.plant-content h3 {
+    color: var(--primary-dark);
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.plant-description {
+    color: var(--gray);
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.plant-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gray);
+}
+
+.detail-item i {
+    color: var(--primary);
+}
+
+.difficulty {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 600;
+}
+
+.difficulty.easy {
+    color: #4caf50;
+}
+
+.difficulty.medium {
+    color: #ff9800;
+}
+
+.difficulty.hard {
+    color: #f44336;
+}
+
+/* نصائح الزراعة */
+.gardening-tips {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    margin-bottom: 50px;
+}
+
+.gardening-tips h2 {
+    text-align: center;
+    color: var(--primary-dark);
+    margin-bottom: 30px;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.tip-card {
+    background: white;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.tip-card i {
+    font-size: 40px;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.tip-card h3 {
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+}
+
+.tip-card p {
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+/* جدول المواسم */
+.seasons-table {
+    background: white;
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.seasons-table h2 {
+    text-align: center;
+    color: var(--primary-dark);
+    margin-bottom: 30px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+thead {
+    background: var(--primary);
+    color: white;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    font-weight: 600;
+}
+
+tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+tbody tr:hover {
+    background: #e8f5e9;
+}
+
+/* التجاوبية */
+@media (max-width: 768px) {
+    .section-header h1 {
+        font-size: 24px;
+    }
+    
+    .section-subtitle {
+        font-size: 16px;
+    }
+    
+    .gardening-tips, .seasons-table {
+        padding: 25px;
+    }
+    
+    .plants-grid {
+        grid-template-columns: 1fr;
+    }
+}

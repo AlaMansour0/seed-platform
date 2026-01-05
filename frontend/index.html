@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بذرة - منصة الزراعة المجتمعية | رؤية 2030</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-seedling"></i>
+                    <span>بذرة</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="guide.html"><i class="fas fa-book"></i> دليل النباتات</a></li>
+                    <li><a href="marketplace.html"><i class="fas fa-store"></i> السوق المجتمعي</a></li>
+                    <li><a href="blog.html"><i class="fas fa-blog"></i> مدونة التجارب</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="marketplace.html" class="btn-primary"><i class="fas fa-plus"></i> أضف منتج</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- الهيرو -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>بذرة 🌱</h1>
+                <h2>منصة الزراعة المنزلية والمجتمعية</h2>
+                <p class="hero-text">
+                    مبادرة مجتمعية تدعم <strong>رؤية 2030</strong> في تحقيق الأمن الغذائي والاستدامة البيئية. 
+                    انضم إلينا لبناء مجتمع زراعي متكامل في المملكة العربية السعودية.
+                </p>
+                <div class="hero-buttons">
+                    <a href="guide.html" class="btn-secondary"><i class="fas fa-leaf"></i> ابدأ بالزراعة</a>
+                    <a href="marketplace.html" class="btn-outline"><i class="fas fa-seedling"></i> تصفح السوق</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=400&fit=crop" alt="زراعة منزلية">
+            </div>
+        </div>
+    </section>
+
+    <!-- إحصاءات -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h3>+500</h3>
+                    <p>مزارع منزلي</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-seedling"></i>
+                    <h3>+1000</h3>
+                    <p>منتج متبادل</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>15</h3>
+                    <p>مدينة سعودية</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-recycle"></i>
+                    <h3>+2000</h3>
+                    <p>كيلو طعام منتج</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- المميزات -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">كيف تدعم "بذرة" رؤية 2030؟</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>الأمن الغذائي</h3>
+                    <p>تشجيع الإنتاج المحلي والاكتفاء الذاتي من الخضروات والفواكه الطازجة.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>المجتمع الحيوي</h3>
+                    <p>بناء شبكة مجتمعية تدعم التعاون وتبادل الخبرات بين المزارعين المنزليين.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>الاستدامة البيئية</h3>
+                    <p>تقليل البصمة الكربونية من خلال الزراعة المحلية وإعادة التدوير.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>اقتصاد دائري</h3>
+                    <p>دعم الاقتصاد المحلي من خلال تبادل المنتجات والخدمات الزراعية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- آخر المنتجات -->
+    <section class="latest-products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">آخر العروض في السوق</h2>
+                <a href="marketplace.html" class="view-all">عرض الكل <i class="fas fa-arrow-left"></i></a>
+            </div>
+            <div class="products-grid" id="latestProducts">
+                <!-- سيتم ملؤها بالمنتجات عبر JavaScript -->
+                <div class="loading">جاري تحميل المنتجات...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- دعوة للعمل -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>انضم إلى مجتمع "بذرة" اليوم</h2>
+                <p>شارك في بناء مستقبل أخضر للمملكة العربية السعودية</p>
+                <div class="cta-buttons">
+                    <a href="marketplace.html" class="btn-primary btn-large"><i class="fas fa-store"></i> ابدأ بالتبادل</a>
+                    <a href="guide.html" class="btn-outline btn-large"><i class="fas fa-graduation-cap"></i> تعلم الزراعة</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-seedling"></i>
+                        <span>بذرة</span>
+                    </div>
+                    <p>منصة زراعة مجتمعية تخدم رؤية 2030 في تحقيق الأمن الغذائي والاستدامة البيئية.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="guide.html">دليل النباتات</a></li>
+                        <li><a href="marketplace.html">السوق المجتمعي</a></li>
+                        <li><a href="blog.html">مدونة التجارب</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>اتصل بنا</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@seed-platform.com</li>
+                        <li><i class="fas fa-phone"></i> +966 50 123 4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> الرياض، المملكة العربية السعودية</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>تابعنا</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 بذرة - منصة الزراعة المجتمعية | جميع الحقوق محفوظة</p>
+                <p>مشروع تقني لدعم رؤية 2030 - جامعة أم القرى</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السوق المجتمعي - بذرة</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-seedling"></i>
+                    <span>بذرة</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="guide.html"><i class="fas fa-book"></i> دليل النباتات</a></li>
+                    <li><a href="marketplace.html" class="active"><i class="fas fa-store"></i> السوق المجتمعي</a></li>
+                    <li><a href="blog.html"><i class="fas fa-blog"></i> مدونة التجارب</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="btn-primary" onclick="showAddProductForm()">
+                        <i class="fas fa-plus"></i> أضف منتج
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- قسم إضافة المنتج -->
+        <section id="addProductSection" class="add-product-section" style="display: none;">
+            <div class="section-header">
+                <h2><i class="fas fa-plus-circle"></i> أضف منتج جديد</h2>
+                <button class="btn-outline" onclick="hideAddProductForm()">
+                    <i class="fas fa-times"></i> إغلاق
+                </button>
+            </div>
+            
+            <form id="productForm" class="product-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-tag"></i> اسم المنتج *</label>
+                        <input type="text" id="name" name="name" required 
+                               placeholder="مثال: بذور طماطم كرزية">
+                        <small class="form-text">اختر اسمًا واضحًا للمنتج</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="type"><i class="fas fa-seedling"></i> نوع المنتج *</label>
+                        <select id="type" name="type" required>
+                            <option value="">اختر النوع</option>
+                            <option value="seeds">🌱 بذور</option>
+                            <option value="seedlings">🪴 شتلات</option>
+                            <option value="produce">🍅 منتج زراعي</option>
+                            <option value="tools">🛠️ أدوات زراعية</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="description"><i class="fas fa-align-left"></i> الوصف</label>
+                    <textarea id="description" name="description" rows="4" 
+                              placeholder="صف منتجك بالتفصيل (النوع، الجودة، ظروف الزراعة المناسبة...)"></textarea>
+                    <small class="form-text">الوصف الجيد يزيد فرص التبادل</small>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="price"><i class="fas fa-money-bill-wave"></i> السعر/الحالة *</label>
+                        <input type="text" id="price" name="price" required 
+                               placeholder="مثال: مجاني، 10 ريال، للتبادل">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="city"><i class="fas fa-map-marker-alt"></i> المدينة *</label>
+                        <input type="text" id="city" name="city" required 
+                               placeholder="المدينة التي تتواجد بها">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="imageUrl"><i class="fas fa-image"></i> رابط صورة المنتج</label>
+                    <input type="url" id="imageUrl" name="imageUrl" 
+                           placeholder="https://example.com/image.jpg">
+                    <small class="form-text">الصور تزيد من جاذبية المنتج</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contact"><i class="fas fa-phone-alt"></i> طريقة التواصل *</label>
+                    <input type="text" id="contact" name="contact" required 
+                           placeholder="بريدك الإلكتروني أو رقم التواصل">
+                    <small class="form-text">سيتم عرض هذه المعلومات للمهتمين</small>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary btn-large">
+                        <i class="fas fa-paper-plane"></i> نشر المنتج
+                    </button>
+                    <button type="reset" class="btn-outline">
+                        <i class="fas fa-redo"></i> مسح النموذج
+                    </button>
+                </div>
+                
+                <div id="formMessage" class="message"></div>
+            </form>
+        </section>
+
+        <!-- فلترة المنتجات -->
+        <section class="filters-section">
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="cityFilter"><i class="fas fa-city"></i> المدينة:</label>
+                    <select id="cityFilter" onchange="filterProducts()">
+                        <option value="">جميع المدن</option>
+                        <option value="الرياض">الرياض</option>
+                        <option value="جدة">جدة</option>
+                        <option value="الدمام">الدمام</option>
+                        <option value="مكة">مكة</option>
+                        <option value="المدينة">المدينة المنورة</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="typeFilter"><i class="fas fa-filter"></i> النوع:</label>
+                    <select id="typeFilter" onchange="filterProducts()">
+                        <option value="">جميع الأنواع</option>
+                        <option value="seeds">بذور</option>
+                        <option value="seedlings">شتلات</option>
+                        <option value="produce">منتج زراعي</option>
+                        <option value="tools">أدوات</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="searchInput"><i class="fas fa-search"></i> بحث:</label>
+                    <input type="text" id="searchInput" placeholder="ابحث عن منتج..." 
+                           oninput="filterProducts()">
+                </div>
+            </div>
+            
+            <div class="stats">
+                <span id="productsCount">0</span> منتج متاح
+            </div>
+        </section>
+
+        <!-- قائمة المنتجات -->
+        <section class="marketplace-section">
+            <div class="section-header">
+                <h2><i class="fas fa-store"></i> السوق المجتمعي</h2>
+                <p class="section-subtitle">تبادل البذور، الشتلات، المنتجات الزراعية والأدوات بين المزارعين</p>
+            </div>
+            
+            <div class="marketplace-info">
+                <div class="info-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>مبدأ التبادل</h3>
+                    <p>نؤمن بقيمة التبادل والتعاون في بناء مجتمع زراعي قوي</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>آمن ومجاني</h3>
+                    <p>المنصة مجانية تماماً وتهدف للفائدة المجتمعية فقط</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-seedling"></i>
+                    <h3>دعم الاستدامة</h3>
+                    <p>كل منتج تبادله يساهم في تحقيق الأمن الغذائي</p>
+                </div>
+            </div>
+            
+            <div class="products-container" id="productsContainer">
+                <!-- سيتم ملؤها بالمنتجات عبر JavaScript -->
+                <div class="loading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>جاري تحميل المنتجات...</p>
+                </div>
+            </div>
+            
+            <div id="noProducts" class="no-products" style="display: none;">
+                <i class="fas fa-seedling"></i>
+                <h3>لا توجد منتجات متاحة</h3>
+                <p>كن أول من يضيف منتجاً إلى السوق المجتمعي</p>
+                <button class="btn-primary" onclick="showAddProductForm()">
+                    <i class="fas fa-plus"></i> أضف منتج الآن
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-seedling"></i>
+                        <span>بذرة</span>
+                    </div>
+                    <p>سوق مجتمعي يخدم رؤية 2030 في تحقيق الأمن الغذائي</p>
+                </div>
+                <div class="footer-section">
+                    <h4>إرشادات الاستخدام</h4>
+                    <ul>
+                        <li>❌ لا تشارك معلومات شخصية حساسة</li>
+                        <li>✅ تأكد من جودة المنتج قبل التبادل</li>
+                        <li>🤝 تواصل باحترام مع الآخرين</li>
+                        <li>🌱 أعط الأولوية للتبادل المجاني</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 سوق بذرة المجتمعي | مشروع دعم رؤية 2030</p>
+                <p>CS3810T - جامعة أم القرى</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/marketplace.js"></script>
+</body>
+</html>
